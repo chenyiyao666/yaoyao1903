@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+        .tj{
+            width: 0px;
+            height: 400px;
+            border-left: 200px solid #009966;
+            border-right:200px solid #696952;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            border-radius: 100%;
+            animation: tj 1s linear infinite;
+        }
+        .tj::before{
+            content: "";
+            width: 200px;
+            height: 200px;
+            background:#009966;
+            border-radius: 100%;
+            position: absolute;
+            left: -100px;
+            top:0;
+        }
+        .tj::after{
+            content: "";
+            width: 200px;
+            height: 200px;
+            background:#696952;
+            border-radius: 100%;
+            position: absolute;
+            right: -100px;
+            bottom:0;
+        }
+        @keyframes tj {
+            0%{
+                transform: translate(-50%,-50%) rotateZ(0deg);
+            }
+            100%{
+                transform: translate(-50%,-50%) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="tj"></div>
+</body>
+</html>
